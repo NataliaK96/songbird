@@ -1,9 +1,19 @@
 .header {
   height: 100px;
+  color: #ffffff;
+  padding: 20px 0;
 }
 .logo {
   height: 70px;
 }
 .logo-name {
   height: 50px;
+}
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.spaceBetween {
+  justify-content: space-between;
 }
