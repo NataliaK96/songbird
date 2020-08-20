@@ -1,0 +1,26 @@
+.img {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 78, 74, 0.4);
+}
+.card {
+  display: grid;
+  grid-template-columns: 180px 2fr;
+  grid-template-rows: 34px 76px;
+  background-color: rgba(0, 78, 74, 0.2);
+  padding: 5px 50px 5px 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  & * {
+    color: rgb(255, 255, 255);
+  }
+}
+.name-bird {
+  padding-bottom: 5px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
+  font-size: 1.5rem;
+}
