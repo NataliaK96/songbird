@@ -1,0 +1,8 @@
+.rhap_container {
+  margin-top: 5px;
+  background-color: transparent;
+  box-shadow: none;
+  & * {
+    color: rgb(255, 255, 255);
+  }
+}

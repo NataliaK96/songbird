@@ -1,0 +1,19 @@
+.header {
+  color: #ffffff;
+  padding: 10px 0;
+}
+.logo {
+  height: 70px;
+}
+.logo-name {
+  height: 50px;
+}
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.spaceBetween {
+  justify-content: space-between;
+}

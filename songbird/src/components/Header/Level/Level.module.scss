@@ -1,0 +1,19 @@
+.level {
+  flex-wrap: wrap;
+  display: flex;
+  list-style-type: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  
+  li {
+    padding: 10px;
+    flex-grow: 1;
+    background-color: rgba(0, 78, 74, 0.7);
+    text-align: center;
+    border: solid rgba(255, 255, 255, 0.1) 1px;
+  }
+  .active {
+    background-color: rgba(0, 78, 74, 0.4);
+  }
+}
