@@ -1,18 +1,17 @@
 .level {
+  flex-wrap: wrap;
   display: flex;
   list-style-type: none;
   margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  
   li {
     padding: 10px;
     flex-grow: 1;
     background-color: rgba(0, 78, 74, 0.7);
     text-align: center;
-    &:first-child {
-      border-radius: 12px 0 0 12px;
-    }
-    &:last-child {
-      border-radius: 0 12px 12px 0;
-    }
+    border: solid rgba(255, 255, 255, 0.1) 1px;
   }
   .active {
     background-color: rgba(0, 78, 74, 0.4);

@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './Main.module.scss';
-import { BirdCard } from './BirdCard/BirdCard';
-import { ChoiceBird } from './ChoiceBird/ChoiceBird';
-import { FluentRevealEffect } from 'fluent-reveal-effect';
+import { BirdCard, ChoiceBird, Result } from '../';
+import { AppContext } from '../../assets/context';
 
-FluentRevealEffect.applyEffect('.btn', {
-  lightColor: 'rgba(255,255,255,0.1)',
-  gradientSize: 150,
-});
-
-export const Main = (props) => (
-  <main className={style.main}>
-    <BirdCard />
-    <div className={style.row}>
-      <ChoiceBird />
+export const Main = (props) => {
+  const context = useContext(AppContext);
+  if (context.gameOver) {
+    return <Result />;
+  }
+  return (
+    <main className={style.main}>
       <BirdCard
-        translate="латинское название"
-        about="Это очень красивый птица!!"
-      />
-    </div>
-    <button className="btn">Next level</button>
-  </main>
-);
+        bird={context.bird}
+        answerIsCorrect={context.answerIsCorrect}
+      ></BirdCard>
+      <div className={style.row}>
+        <div className={style['answer-wrapper']}>
+          <ChoiceBird birds={context.birds}></ChoiceBird>
+        </div>
+        <div className={style['card-wrapper']}>
+          <BirdCard bird={context.viewBird} view={true}></BirdCard>
+        </div>
+      </div>
+      <button
+        className={`${style.next} ${
+          context.answerIsCorrect ? style.active : ''
+        }`}
+        onClick={() => {
+          if (!context.answerIsCorrect) {
+            return;
+          }
+          context.nextLevel();
+        }}
+      >
+        Next
+      </button>
+    </main>
+  );
+};
